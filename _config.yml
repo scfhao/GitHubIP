@@ -30,6 +30,7 @@ exclude:
   - findGitHubIP.sh
   - README.md
   - job.sh
+  - .github
 
 # Exclude from processing.
 # The following items will not be processed, by default.
