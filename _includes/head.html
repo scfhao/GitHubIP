@@ -1,0 +1,210 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+<meta name="description" content="{{ site.description | escape }}">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  .container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+  }
+  header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  header h1 {
+    color: #0366d6;
+  }
+  nav {
+    margin-top: 15px;
+  }
+  nav a {
+    color: #0366d6;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  tr:hover {
+    background-color: #f8f9fa;
+  }
+  h2 {
+    margin: 30px 0 15px;
+    color: #24292e;
+  }
+  .post-list {
+    list-style: none;
+  }
+  .post-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .post-meta {
+    color: #666;
+    font-size: 0.9em;
+  }
+  footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+  }
+
+  /* Markdown 内容样式优化 */
+  article {
+    line-height: 1.8;
+    color: #24292e;
+  }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #24292e;
+  }
+  article h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+  article h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+  article h3 { font-size: 1.25em; }
+  article h4 { font-size: 1em; }
+
+  article p {
+    margin-bottom: 16px;
+  }
+
+  article a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  article a:hover {
+    text-decoration: underline;
+  }
+
+  article ul,
+  article ol {
+    padding-left: 2em;
+    margin-bottom: 16px;
+  }
+  article li {
+    margin-bottom: 8px;
+  }
+  article li > ul,
+  article li > ol {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  article blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+    margin: 0 0 16px 0;
+  }
+
+  article code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 85%;
+    padding: 0.2em 0.4em;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+  }
+  article pre {
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 0 0 16px 0;
+    overflow-x: auto;
+    line-height: 1.45;
+  }
+  article pre code {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 85%;
+  }
+
+  article hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
+  }
+
+  article table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    width: 100%;
+    overflow: auto;
+  }
+  article table th,
+  article table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+  article table th {
+    font-weight: 600;
+    background-color: #f6f8fa;
+  }
+  article table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+  }
+  article table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+
+  article img {
+    max-width: 100%;
+    box-sizing: content-box;
+    border-radius: 6px;
+  }
+
+  article strong {
+    font-weight: 600;
+  }
+  article em {
+    font-style: italic;
+  }
+</style>

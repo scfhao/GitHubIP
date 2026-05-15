@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "如何使用本站 IP"
+date:   2026-05-15 12:00:00 +0800
+categories: 使用指南
+---
+
+## 简介
+
+本站提供实时可用的 GitHub IP 地址列表，通过修改本地 hosts 文件，可以解决访问 GitHub 网络问题。
+
+## Windows 系统
+
+### 方法一：手动修改
+
+1. 以管理员身份打开记事本
+2. 打开文件：`C:\Windows\System32\drivers\etc\hosts`
+3. 在文件末尾添加以下内容（从本站首页选择一个或多个 IP）：
+
+```
+140.82.112.3 github.com
+140.82.112.3 www.github.com
+140.82.112.3 assets-cdn.github.com
+140.82.112.3 github.githubassets.com
+```
+
+4. 保存文件
+5. 刷新 DNS 缓存：打开命令提示符（CMD），输入：
+
+```cmd
+ipconfig /flushdns
+```
+
+6. 访问 GitHub 测试
+
+### 方法二：使用 Hosts 编辑器工具
+
+推荐使用工具如 SwitchHosts、HostsMan 等，可以更方便地管理 hosts 文件。
+
+## macOS 系统
+
+### 方法一：终端修改
+
+1. 打开终端（Terminal）
+2. 输入以下命令编辑 hosts 文件：
+
+```bash
+sudo nano /etc/hosts
+```
+
+3. 输入密码后，在文件末尾添加以下内容：
+
+```
+140.82.112.3 github.com
+140.82.112.3 www.github.com
+140.82.112.3 assets-cdn.github.com
+140.82.112.3 github.githubassets.com
+```
+
+4. 按 `Ctrl + O` 保存，然后按 `Enter` 确认
+5. 按 `Ctrl + X` 退出编辑器
+6. 刷新 DNS 缓存：
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
+
+7. 访问 GitHub 测试
+
+### 方法二：使用图形界面工具
+
+推荐使用 SwitchHosts 等工具，同样适用于 macOS。
+
+## 注意事项
+
+1. **选择 IP**：建议选择延迟最低的 IP 地址
+2. **定期更新**：GitHub 的 IP 可能会变化，建议定期查看本站获取最新 IP
+3. **多个 IP**：可以添加多个 IP，系统会自动选择可用的
+4. **取消修改**：如果不再需要，删除 hosts 文件中添加的内容即可
+
+## 验证是否生效
+
+修改 hosts 文件后，可以通过以下方式验证：
+
+1. 在终端或命令提示符中执行：
+
+```bash
+ping github.com
+```
+
+2. 查看返回的 IP 地址是否与你设置的一致
+3. 在浏览器中访问 GitHub，检查是否能正常加载
