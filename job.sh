@@ -8,7 +8,7 @@
 # 4. 配置 git 使用 SSH 密钥认证，避免手动输入密码
 
 # 项目目录路径（需要根据实际克隆位置修改）
-PROJECT_DIR="/path/to/GitHubIP"
+PROJECT_DIR="/mnt/data/git/GitHubIP"
 
 # 日志文件路径
 LOG_FILE="/var/log/githubip_update.log"
