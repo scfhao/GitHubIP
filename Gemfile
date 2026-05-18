@@ -2,15 +2,9 @@ source "https://rubygems.org"
 
 # 本地开发使用最新版本
 gem "jekyll", "~> 4.4.1"
-gem "webrick"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-end
-
-# GitHub Pages 环境使用官方 gem
-group :github_pages do
-  gem "github-pages", group: :jekyll_plugins
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
